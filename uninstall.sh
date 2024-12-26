@@ -4,12 +4,12 @@ echo "Disabling X11..."
 apt remove x11-repo -y >/dev/null 2>&1
 echo "Removing VNC Server..."
 apt remove tigervnc -y >/dev/null 2>&1
-echo "Setting up xstartup and stuff..."
-rm -rf $HOME/.vnc/xstartup
+echo "Setting up stuff..."
+rm -rf $HOME/.vnc
 echo "export DISPLAY=""" >> $PREFIX/etc/bash.bashrc
 echo "Removing MATE..."
 apt remove mate* marco caja thunar -y >/dev/null 2>&1
-echo "Installing Zenity dialog utility..."
+echo "Uninstalling Zenity dialog utility..."
 apt remove zenity -y >/dev/null 2>&1
 echo "Uninstallíng other stuff..."
 apt remove xorg-xmessage -y >/dev/null 2>&1
