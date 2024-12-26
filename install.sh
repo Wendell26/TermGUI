@@ -21,11 +21,16 @@ echo -e "\e[0;33m• user.txt: Your username"
 echo -e "\e[0;33m• passwd.txt: Your password"
 echo -e "\e[0;34mSet this files and try login on system.\e[0;97m"
 fi
-}                                                                                                                                    echo "Termux GUI Installer"                                                                                                          echo "Enabling X11..."                                                                                                               apt install x11-repo -y >/dev/null 2>&1
-echo "Downloading VNC Server..."                                                                                                     apt install tigervnc -y >/dev/null 2>&1
+}                                                                                                                                    
+echo "Termux GUI Installer"                                                                                                          
+echo "Enabling X11..."                                                                                                               
+apt install x11-repo -y >/dev/null 2>&1
+echo "Downloading VNC Server..."                                                                                                     
+apt install tigervnc -y >/dev/null 2>&1
 echo "Preparing first use..."
 vncserver
-pkill Xvnc                                                                                                                           echo "Setting up xstartup and stuff..."
+pkill Xvnc                                                                                                                           
+echo "Setting up xstartup and stuff..."
 rm -rf $HOME/.vnc/xstartup
 cp -r ./login $HOME/.vnc
 echo "#!/bin/bash" >> $HOME/.vnc/xstartup
